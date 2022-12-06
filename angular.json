@@ -55,6 +55,14 @@
                   "maximumError": "5mb"
                 }
               ]
+            },
+            "development": {
+              "buildOptimizer": false,
+              "optimization": false,
+              "vendorChunk": true,
+              "extractLicenses": false,
+              "sourceMap": true,
+              "namedChunks": true
             }
           }
         },
@@ -175,6 +183,7 @@
           "defaultConfiguration": "production"
         }
       }
-    }},
+    }
+  },
   "defaultProject": "onboard"
 }
