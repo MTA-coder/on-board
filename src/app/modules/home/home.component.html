@@ -1,1 +1,27 @@
-<p>home works!</p>
+<ion-card>
+  <ion-card-header>
+    <ion-card-title>Home Screen</ion-card-title>
+    <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+  </ion-card-header>
+
+  <ion-card-content>
+    Here's a small text description for the card content. Nothing more, nothing less.
+  </ion-card-content>
+</ion-card>
+
+<ion-progress-bar [value]="progress"></ion-progress-bar>
+<ion-range></ion-range>
+<ion-range>
+  <ion-icon slot="start"
+            name="snow-outline"></ion-icon>
+  <ion-icon slot="end"
+            name="sunny-outline"></ion-icon>
+</ion-range>
+<ion-range [dualKnobs]="true"
+           [value]="{ lower: 20, upper: 80 }"></ion-range>
+<ion-searchbar></ion-searchbar>
+<ion-searchbar placeholder="Custom Placeholder"></ion-searchbar>
+<ion-searchbar disabled="true"
+               placeholder="Disabled"></ion-searchbar>
+<ion-searchbar animated="true"
+               placeholder="Animated"></ion-searchbar>
