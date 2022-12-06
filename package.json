@@ -27,6 +27,7 @@
     "@gilsdav/ngx-translate-router": "^5.1.1",
     "@nguniversal/express-engine": "^15.0.0",
     "express": "^4.15.2",
+    "ngx-seo": "^5.3.0",
     "rxjs": "~7.6.0",
     "tslib": "^2.4.1",
     "zone.js": "~0.12.0"
