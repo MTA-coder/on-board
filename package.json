@@ -17,7 +17,7 @@
     "serve:ssr": "node dist/onboard/server/main.js",
     "build:ssr": "ng build && ng run onboard:server",
     "prerender": "ng run onboard:prerender",
-    "start:heroku": "node dist/app/server/main.js",
+    "start:heroku": "node dist/onboard/browser/server/main.js",
     "postinstall": "npm run build:ssr"
   },
   "private": true,
