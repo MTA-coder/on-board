@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "onboard": {
+    "angular-starter": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/",
+            "outputPath": "dist/angular-starter/browser",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -68,22 +68,22 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "onboard:build"
+            "browserTarget": "angular-starter:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "onboard:build:production"
+              "browserTarget": "angular-starter:build:production"
             },
             "development": {
-              "browserTarget": "my-project:build:development"
-            },
-            "defaultConfiguration": "development"
-          }
+              "browserTarget": "angular-starter:build:development"
+            }
+          },
+          "defaultConfiguration": "development"
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "onboard:build"
+            "browserTarget": "angular-starter:build"
           }
         },
         "test": {
@@ -120,18 +120,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "onboard:serve"
+            "devServerTarget": "angular-starter:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "onboard:serve:production"
+              "devServerTarget": "angular-starter:serve:production"
             }
           }
         },
         "server": {
           "builder": "@angular-devkit/build-angular:server",
           "options": {
-            "outputPath": "dist/onboard/server",
+            "outputPath": "dist/angular-starter/server",
             "main": "server.ts",
             "tsConfig": "tsconfig.server.json"
           },
@@ -143,11 +143,12 @@
                   "replace": "src/environments/environment.ts",
                   "with": "src/environments/environment.prod.ts"
                 }
-              ],
-              "optimization": true,
-              "sourceMap": false,
-              "extractLicenses": true,
-              "vendorChunk": false
+              ]
+            },
+            "development": {
+              "optimization": false,
+              "sourceMap": true,
+              "extractLicenses": false
             }
           },
           "defaultConfiguration": "production"
@@ -155,15 +156,16 @@
         "serve-ssr": {
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {
-            "options": {
-              "browserTarget": "client:build",
-              "serverTarget": "client:server"
+            "development": {
+              "browserTarget": "angular-starter:build:development",
+              "serverTarget": "angular-starter:server:development"
             },
             "production": {
-              "browserTarget": "onboard:build:production",
-              "serverTarget": "onboard:server:production"
+              "browserTarget": "angular-starter:build:production",
+              "serverTarget": "angular-starter:server:production"
             }
-          }
+          },
+          "defaultConfiguration": "development"
         },
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
@@ -174,12 +176,12 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "onboard:build:production",
-              "serverTarget": "onboard:server:production"
+              "browserTarget": "angular-starter:build:production",
+              "serverTarget": "angular-starter:server:production"
             },
             "development": {
-              "browserTarget": "onboard:build:development",
-              "serverTarget": "onboard:server:development"
+              "browserTarget": "angular-starter:build:development",
+              "serverTarget": "angular-starter:server:development"
             }
           },
           "defaultConfiguration": "production"

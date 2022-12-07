@@ -10,7 +10,7 @@ import { RouteHelper } from './services/route-helper.service';
     AppComponent
   ],
   imports: [
-    BrowserModule.withServerTransition({ appId: 'serverApp' }),
+    BrowserModule.withServerTransition({ appId: 'angular-starter' }),
     AppRoutingModule
   ],
   providers: [RouteHelper],
