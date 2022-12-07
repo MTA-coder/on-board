@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { ActivatedRoute, Router, NavigationEnd } from '@angular/router';
-import { SeoSocialShareService } from 'ngx-seo';
+import { SeoSocialShareData, SeoSocialShareService } from 'ngx-seo';
 import { filter, map } from 'rxjs';
 
 @Injectable({
@@ -24,7 +24,7 @@ export class RouteHelper {
       }),
       filter(route => route.outlet === 'primary')
     ).subscribe((route: ActivatedRoute) => {
-      const seo = route.snapshot.data['seo'];
+      const seo: SeoSocialShareData = route.snapshot.data['seo'];
       // set your meta tags & title here
       this.seoSocialShareService.setData(seo);
     });
