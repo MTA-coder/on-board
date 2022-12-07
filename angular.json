@@ -73,7 +73,11 @@
           "configurations": {
             "production": {
               "browserTarget": "onboard:build:production"
-            }
+            },
+            "development": {
+              "browserTarget": "my-project:build:development"
+            },
+            "defaultConfiguration": "development"
           }
         },
         "extract-i18n": {
