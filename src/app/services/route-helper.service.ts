@@ -12,18 +12,14 @@ export class RouteHelper {
     private readonly router: Router,
     private readonly activatedRoute: ActivatedRoute,
     private readonly seoSocialShareService: SeoSocialShareService
-  ) {
-    this.setupRouting();
-  }
+  ) { }
 
-  private setupRouting() {
+  setupRouting() {
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd),
       map(() => this.activatedRoute),
       map(route => {
-        while (route.firstChild) {
-          route = route.firstChild;
-        }
+        while (route.firstChild) route = route.firstChild;
         return route;
       }),
       filter(route => route.outlet === 'primary')
