@@ -13,6 +13,7 @@ import { RouteHelper } from './services/route-helper.service';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule
   ],
+  providers: [RouteHelper],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
