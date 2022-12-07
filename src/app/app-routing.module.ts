@@ -4,6 +4,11 @@ import { SEOHomePage, SEOProductPage } from './models/seo-pages';
 
 const routes: Routes = [
   {
+    path: '',
+    pathMatch: 'full',
+    redirectTo: 'screen'
+  },
+  {
     path: 'screen',
     data: {
       seo: SEOHomePage
@@ -19,11 +24,6 @@ const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: 'screen'
-  },
-  {
-    path: '',
-    pathMatch: 'full',
     redirectTo: 'screen'
   }
 ];
