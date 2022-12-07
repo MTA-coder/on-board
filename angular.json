@@ -155,16 +155,15 @@
         "serve-ssr": {
           "builder": "@nguniversal/builders:ssr-dev-server",
           "configurations": {
-            "development": {
-              "browserTarget": "onboard:build:development",
-              "serverTarget": "onboard:server:development"
+            "options": {
+              "browserTarget": "client:build",
+              "serverTarget": "client:server"
             },
             "production": {
               "browserTarget": "onboard:build:production",
               "serverTarget": "onboard:server:production"
             }
-          },
-          "defaultConfiguration": "development"
+          }
         },
         "prerender": {
           "builder": "@nguniversal/builders:prerender",
