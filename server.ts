@@ -34,9 +34,6 @@ export function app(): express.Express {
     res.render(indexHtml, { req, providers: [{ provide: APP_BASE_HREF, useValue: req.baseUrl }] })
   });
 
-  server.all('*', (req, res) => {
-    res.status(200).sendFile(`/`, { root: distFolder });
-  });
 
   return server;
 }
