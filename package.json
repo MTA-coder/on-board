@@ -1,6 +1,11 @@
 {
   "name": "onboard",
   "version": "0.0.0",
+  "description": "a really cool app",
+  "engines": {
+    "node": "18.x",
+    "npm": "8.x"
+  },
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
